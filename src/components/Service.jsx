@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Service() {
   return (
-    <div>
-      <h1>This is Service</h1>
+    <div className="my-12 max-w-4xl bg-blue-950 mx-auto text-white">
+      <h1 className="p-2">This is Service</h1>
     </div>
   );
 }
