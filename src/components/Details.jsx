@@ -1,10 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 export default function Details() {
   const mealDish = useLoaderData();
   const { meals } = mealDish;
   console.log(meals[0]);
 
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("/service");
+  };
   return (
     <div className="w-3/4 mx-auto">
       <h1 className="text-6xl my-12 underline text-center text-blue-700">
@@ -27,6 +31,12 @@ export default function Details() {
           Back
         </button>
       </Link>
+      <button
+        onClick={handleBack}
+        className="bg-blue-950 text-white font-bold text-2xl px-6 py-2 rounded-lg border-0 "
+      >
+        Back by Click
+      </button>
     </div>
   );
 }
