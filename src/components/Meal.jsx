@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Meal({ meal }) {
   console.log(meal);
   return (
@@ -10,6 +12,7 @@ export default function Meal({ meal }) {
         <h3>{meal.strCategory}</h3>
         <h3>{meal.strArea}</h3>
       </div>
+      <Link to={`/details/${meal.strMeal}`}>Show Details</Link>
     </div>
   );
 }

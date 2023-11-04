@@ -7,6 +7,7 @@ import Service from "./components/Service.jsx";
 import Login from "./components/Login.jsx";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
+import Details from "./components/Details.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/details/:strMeals",
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/search.php?s=${params.strMeals}`
+          ),
+        element: <Details></Details>,
       },
     ],
   },
